@@ -1,0 +1,39 @@
+{
+  "name": "DevsTrainning",
+  "version": "1.0.0",
+  "description": "### Victor (Nano) ### Roberto (Pires)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DouglasPonce85/DevsTrainning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DouglasPonce85/DevsTrainning/issues"
+  },
+  "homepage": "https://github.com/DouglasPonce85/DevsTrainning#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "chalk": "^2.4.2",
+    "debug": "^4.1.1"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2000",
+    "env": {
+      "PORT": 4000
+    }
+  }
+}
