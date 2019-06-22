@@ -6,9 +6,11 @@ const app = express();
 
 const coffeeRouter = require('./src/routes/coffeeshops');
 const reviewRouter = require('./src/routes/reviews');
+const hotelRouter = require('./src/routes/hotels');
 
 app.use('/', coffeeRouter);
 app.use('/', reviewRouter);
+app.use('/', hotelRouter);
 app.get('/', (req, res) => {
 	res.send({ data: 'DevsTrainning ~ 2019' });
 });
