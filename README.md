@@ -14,3 +14,4 @@ To Do:
 * Integrate database (MySQL)
 * Integrate ORM for handling models
 * Retrieve DB data by route requests
+* Adding Hotels
