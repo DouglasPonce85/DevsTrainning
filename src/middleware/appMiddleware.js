@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 const reviver = require('../utils/reviver');
-const cors = require('../middleware/cors');
+const cors = require('./cors');
 
 module.exports = {
 	loadMiddleware: (app) => {

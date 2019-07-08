@@ -1,8 +1,8 @@
 const express = require('express');
 
-const myRouter = require('./routes/router');
-const myServer = require('./services/server');
-const myMiddleware = require('./middleware/appMiddleware');
+const myRouter = require('./src/routes/router');
+const myServer = require('./src/services/server');
+const myMiddleware = require('./src/middleware/appMiddleware');
 
 const app = express();
 
