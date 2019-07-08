@@ -1,5 +1,5 @@
 const consts = require('../configs/consts');
-const dbconfig = require('../configs/db_config');
+const dbconfig = require('../configs/global/db_config');
 
 function isDevelopEnvironment() {
     return process.env.DEV_ENVIRONMENT === consts.develop;
