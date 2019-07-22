@@ -8,13 +8,13 @@ sucursales.route('/sucursales')
 
 sucursales.route('/sucursales')
     .post(sucursalesController.insertSucursales);
-/*
-categories.route('/sucursales/:sucursales_id')
-    .put(sucursalesController.updatesucursales);
 
-categories.route('/sucursales/:sucursales_id')
-    .delete(sucursalesController.deletesucursales);
-*/
+sucursales.route('/sucursales/:sucursales_id')
+    .put(sucursalesController.updateSucursales);
+
+sucursales.route('/sucursales/:sucursales_id')
+    .delete(sucursalesController.deleteSucursales);
+
 sucursales.route('/sucursales/:active')
     .get(sucursalesController.listSucursalesByActive);
 

@@ -59,20 +59,20 @@ module.exports = {
       .catch((err) => {
         console.log('Error raised >> ', err);
       })
-  }
-/*
-  updateCategory(req, res) {
-    const { category_id } = req.params;
+  },
+
+  updateSucursales(req, res) {
+    const { sucursales_id } = req.params;
     const { name, is_active } = req.body;
 
-    if (!category_id) {
+    if (!sucursales_id) {
       res.status(consts.codeErrorStatus);
       res.send('Please provide a category id');
       return;
     }
 
-    knex('category')
-    .where('category_id', category_id)
+    knex('sucursales')
+    .where('sucursales_id', sucursales_id)
     .update({
       name,
       is_active
@@ -83,17 +83,17 @@ module.exports = {
     })
   },
 
-  deleteCategory(req, res) {
-    const { category_id } = req.params;
+  deleteSucursales(req, res) {
+    const { sucursales_id } = req.params;
 
-    if (!category_id) {
+    if (!sucursales_id) {
       res.status(consts.codeErrorStatus);
       res.send('Please provide a category id');
       return;
     }
 
-    knex('category')
-    .where('category_id', category_id)
+    knex('sucursales')
+    .where('sucursales_id', sucursales_id)
     .del()
     .then((result) => {
       res.send({ result });
@@ -101,5 +101,4 @@ module.exports = {
         console.log('Error raised >> ', err);
     })
   }
-  */
 }
