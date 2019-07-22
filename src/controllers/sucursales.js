@@ -26,9 +26,9 @@ module.exports = {
       .catch((err) => {
         console.log('Error raised >> ', err);
       })
-  }
-/*
-  insertCategory(req, res) {
+  },
+
+  insertSucursales(req, res) {
     const { name, is_active } = req.body;
 
     if (!name) {
@@ -37,15 +37,15 @@ module.exports = {
       return;
     }
 
-    knex('category').insert({ name, is_active})
-      .then((categoryInserted) => {
-        res.send({ categoryInserted });
+    knex('sucursales').insert({ name, is_active})
+      .then((sucursalesInserted) => {
+        res.send({ sucursalesInserted });
       })
       .catch((err) => {
         console.log('Error raised >> ', err);
       })
-  },
-
+  }
+/*
   updateCategory(req, res) {
     const { category_id } = req.params;
     const { name, is_active } = req.body;

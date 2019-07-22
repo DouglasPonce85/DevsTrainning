@@ -6,9 +6,9 @@ const sucursalesController = require('../../controllers/sucursales');
 sucursales.route('/sucursales')
     .get(sucursalesController.listAllSucursales);
 
-/*categories.route('/sucursales')
-    .post(sucursalesController.insertsucursales);
-
+sucursales.route('/sucursales')
+    .post(sucursalesController.insertSucursales);
+/*
 categories.route('/sucursales/:sucursales_id')
     .put(sucursalesController.updatesucursales);
 
