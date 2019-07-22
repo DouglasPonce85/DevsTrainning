@@ -28,6 +28,21 @@ module.exports = {
       })
   },
 
+  
+  listSucursalesById(req, res) {
+    const { sucursales_id } = req.params;
+    knex.where({
+      sucursales_id
+    }).from('sucursales')
+      .select("*")
+      .then((sucursales) => {
+        res.send({ sucursales });
+      })
+      .catch((err) => {
+        console.log('Error raised >> ', err);
+      })
+  },
+
   insertSucursales(req, res) {
     const { name, is_active } = req.body;
 

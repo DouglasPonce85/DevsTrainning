@@ -18,4 +18,7 @@ categories.route('/sucursales/:sucursales_id')
 sucursales.route('/sucursales/:active')
     .get(sucursalesController.listSucursalesByActive);
 
+sucursales.route('/sucursales/id/:sucursales_id')
+    .get(sucursalesController.listSucursalesById);
+
 module.exports = sucursales;
