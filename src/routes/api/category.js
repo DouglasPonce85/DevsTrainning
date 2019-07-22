@@ -18,4 +18,8 @@ categories.route('/category/:category_id')
 categories.route('/category/:active')
     .get(categoryController.listCategoriesByActive);
 
+categories.route('/category/id/:category_id')
+    .get(categoryController.listCategoryById);
+
+
 module.exports = categories;

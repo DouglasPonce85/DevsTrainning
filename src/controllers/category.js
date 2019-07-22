@@ -28,6 +28,20 @@ module.exports = {
       })
   },
 
+  listCategoryById(req, res) {
+    const { category_id } = req.params;
+    knex.where({
+      category_id
+    }).from('category')
+      .select("*")
+      .then((categories) => {
+        res.send({ categories });
+      })
+      .catch((err) => {
+        console.log('Error raised >> ', err);
+      })
+  },
+
   insertCategory(req, res) {
     const { name, is_active } = req.body;
 
