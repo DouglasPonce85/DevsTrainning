@@ -14,8 +14,8 @@ categories.route('/sucursales/:sucursales_id')
 
 categories.route('/sucursales/:sucursales_id')
     .delete(sucursalesController.deletesucursales);
-
-categories.route('/sucursales/:active')
-    .get(sucursalesController.listCategoriesByActive);
 */
+sucursales.route('/sucursales/:active')
+    .get(sucursalesController.listSucursalesByActive);
+
 module.exports = sucursales;

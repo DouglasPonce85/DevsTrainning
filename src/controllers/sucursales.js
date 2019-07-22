@@ -12,13 +12,13 @@ module.exports = {
       .catch((err) => {
         console.log('Error raised >> ', err);
       });
-  }
-/*
-  listsucursalesByActive(req, res) {
+  },
+
+  listSucursalesByActive(req, res) {
     const { active } = req.params;
     knex.where({
       is_active: active
-    }).from('category')
+    }).from('sucursales')
       .select("*")
       .then((sucursales) => {
         res.send({ sucursales });
@@ -26,8 +26,8 @@ module.exports = {
       .catch((err) => {
         console.log('Error raised >> ', err);
       })
-  },
-
+  }
+/*
   insertCategory(req, res) {
     const { name, is_active } = req.body;
 
