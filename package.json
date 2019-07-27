@@ -42,7 +42,7 @@
     "env": {
       "PORT": 4000,
       "DEV_ENVIRONMENT": "DEVELOP",
-      "MOCK_DATA": 0
+      "MOCK_DATA": 1
     }
   }
 }
