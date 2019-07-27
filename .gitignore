@@ -5,3 +5,4 @@
 
 # misc
 /src/configs/global/*.js
+/logs
