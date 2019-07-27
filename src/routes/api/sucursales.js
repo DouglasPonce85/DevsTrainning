@@ -15,10 +15,10 @@ sucursales.route('/sucursales/:sucursales_id')
 sucursales.route('/sucursales/:sucursales_id')
     .delete(sucursalesController.deleteSucursales);
 
-sucursales.route('/sucursales/:active')
-    .get(sucursalesController.listSucursalesByActive);
-
 sucursales.route('/sucursales/id/:sucursales_id')
     .get(sucursalesController.listSucursalesById);
+
+sucursales.route('/sucursales/:active')
+    .get(sucursalesController.listSucursalesByActive);
 
 module.exports = sucursales;

@@ -13,8 +13,13 @@ function getDBPort() {
     return process.env.PORT || consts.defaultPort;
 }
 
+function isUsingMockData() {
+    return parseInt(process.env.MOCK_DATA, 10) === 1;
+}
+
 module.exports = {
     isDevelopEnvironment,
     getDBConfig,
-    getDBPort
+    getDBPort,
+    isUsingMockData
 }
