@@ -17,9 +17,27 @@ function isUsingMockData() {
     return parseInt(process.env.MOCK_DATA, 10) === 1;
 }
 
+function getErrorStackInfo(err) {
+	const stack = err.stack || '';
+	return stack.split('\n').map(line => line.trim());
+}
+
+function controllerErrorRaised(methodName, err, errorType, next) {
+	const source = `Error @ method [ ${methodName}() ]`;
+	const stackInfo = getErrorStackInfo(err);
+
+	next({
+		message: err,
+		errorType,
+		source,
+		stackInfo
+	});
+}
+
 module.exports = {
     isDevelopEnvironment,
     getDBConfig,
     getDBPort,
-    isUsingMockData
+    isUsingMockData,
+    controllerErrorRaised
 }
