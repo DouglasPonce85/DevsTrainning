@@ -1,17 +1,32 @@
+var _ = require('lodash');
+
 const knex = require('../middleware/knex');
 
 const consts = require('../configs/consts');
+const helper = require('../services/helper');
+const listCategoryMock = require('../../data/category');
+
+function getCategoryFromDB(res) {
+  knex.from('category')
+  .select("*")
+  .then((category) => {
+    res.send({ category });
+  })
+  .catch((err) => {
+    console.log('Error raised >> ', err);
+  });
+}
+
+function getCategoryFromMock(res) {
+  res.send({ result: listCategoryMock });
+}
 
 module.exports = {
   listAllCategories(req, res) {
-    knex.from('category')
-      .select("*")
-      .then((categories) => {
-        res.send({ categories });
-      })
-      .catch((err) => {
-        console.log('Error raised >> ', err);
-      });
+    if (helper.isUsingMockData())
+      getCategoryFromMock(res);
+    else
+      getCategoryFromDB(res);
   },
 
   listCategoriesByActive(req, res) {
