@@ -21,6 +21,29 @@ function getCategoryFromMock(res) {
   res.send({ result: listCategoryMock });
 }
 
+function getCategoryByIdFromDB(res, category_id) {
+  knex.where({
+    category_id
+  }).from('category')
+    .select("*")
+    .then((categories) => {
+      res.send({ categories });
+    })
+    .catch((err) => {
+      console.log('Error raised >> ', err);
+    })
+}
+
+function getCategoryByIdFromMock(res, category_id) {
+  let categoryFound = null;
+  _.findIndex(listCategoryMock, (category) => {
+    if (category.category_id == category_id)
+      categoryFound = category;
+  });
+
+  res.send({ result: categoryFound });
+}
+
 module.exports = {
   listAllCategories(req, res) {
     if (helper.isUsingMockData())
@@ -29,24 +52,19 @@ module.exports = {
       getCategoryFromDB(res);
   },
 
+  listCategoryById(req, res) {
+    const { category_id } = req.params;
+    if (helper.isUsingMockData())
+      getCategoryByIdFromMock(res, category_id);
+    else
+      getCategoryByIdFromDB(res, category_id);
+   
+  },
+
   listCategoriesByActive(req, res) {
     const { active } = req.params;
     knex.where({
       is_active: active
-    }).from('category')
-      .select("*")
-      .then((categories) => {
-        res.send({ categories });
-      })
-      .catch((err) => {
-        console.log('Error raised >> ', err);
-      })
-  },
-
-  listCategoryById(req, res) {
-    const { category_id } = req.params;
-    knex.where({
-      category_id
     }).from('category')
       .select("*")
       .then((categories) => {
