@@ -1,6 +1,7 @@
 const categoryRouter = require('./api/category');
 const sucursalesRouter = require('./api/sucursales');
 const rolesRouter = require('./api/roles');
+const usersRouter = require('./api/users');
 const errorManager = require('../middleware/errorManager');
 const consts = require('../configs/consts');
 
@@ -9,6 +10,7 @@ module.exports = {
         app.use('/', categoryRouter);
         app.use('/', sucursalesRouter);
         app.use('/', rolesRouter);
+        app.use('/', usersRouter);
         app.get('/', (req, res) => {
             res.send({ data: 'DevsTrainning ~ 2019' });
         });

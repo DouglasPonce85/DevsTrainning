@@ -67,11 +67,11 @@ module.exports = {
   insertRoles(req, res, next) {
     try {
       const { name, } = req.body;
-      // if (!name) {
-      //   res.status(consts.codeErrorStatus);
-      //   res.send('Please provide valid info');
-      //   return;
-      // }
+      if (!name) {
+        res.status(consts.codeErrorStatus);
+        res.send('Please provide valid info');
+        return;
+      }
 
       knex('roles').insert({ name })
         .then((rolesInserted) => {
